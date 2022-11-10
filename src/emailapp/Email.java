@@ -22,7 +22,6 @@ public class Email  {
 
         //Call a method asking for the department - and return the department
         this.department = setDepartment();
-        System.out.println("Department: " + this.department);
 
         //Call a method that returns a random password
         this.password = randomPassword(defaultPasswordLength);
@@ -30,7 +29,6 @@ public class Email  {
 
         //Combine elements to generate email
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "."+ companySuffix;
-        System.out.println("Your email is : " + email);
     }
 
 
@@ -90,5 +88,15 @@ public class Email  {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", mailboxCapacity=" + mailboxCapacity +
+                "mb }";
     }
 }
